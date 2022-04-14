@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
+
+:root {
+	--background: white;
+	--hover: lightgrey;
+	--accent-1: black;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	background-color: var(--background);
+	font-family: Rubik Mono One, sans-serif;
+	font-size: 14pt;
+	height: 100vh;
+}
+
+.board {
+	width: 90vmin;
+	height: 90vmin;
+	margin: 5vmin;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr;
+}
+
+.cell {
+	border: var(--accent-1) 0.6vmin none;
+	background-color: var(--background);
+}
+
+.cell:hover:enabled {
+	background-color: var(--hover);
+}
+
+#cell-1,
+#cell-2,
+#cell-4,
+#cell-5,
+#cell-7,
+#cell-8 {
+	border-left-style: solid;
+}
+
+#cell-0,
+#cell-1,
+#cell-3,
+#cell-4,
+#cell-6,
+#cell-7 {
+	border-right-style: solid;
+}
+
+#cell-0,
+#cell-1,
+#cell-2,
+#cell-3,
+#cell-4,
+#cell-5 {
+	border-bottom-style: solid;
+}
+
+#cell-3,
+#cell-4,
+#cell-5,
+#cell-6,
+#cell-7,
+#cell-8 {
+	border-top-style: solid;
+}
+
+.cell > svg {
+	width: 90%;
+	height: 90%;
+}
+
+.popup {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 40%;
+	bottom: 40%;
+	background-color: #000a;
+	color: white;
+	padding: 2%;
+}
+
+.popup > * {
+	display: flex;
+	height: 50%;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.popup button {
+	width: 10%;
+	margin: 10px;
+	border: 2px solid white;
+	color: inherit;
+	background-color: transparent;
+	padding: 5px;
+	font-family: inherit;
+	font-size: inherit;
+}
+
+.popup button:hover {
+	background-color: white;
+	color: black;
+}
+
+#popup-start button {
+	min-width: 150px;
+}
+
+#popup-end button {
+	min-width: 200px;
+}
+
+.highlighted > svg {
+	animation: blink 1s infinite;
+}
+
+@keyframes blink {
+	0% {
+		filter: none;
+	}
+	45% {
+		filter: none;
+	}
+	50% {
+		filter: invert();
+	}
+	95% {
+		filter: invert();
+	}
+}
