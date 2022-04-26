@@ -83,7 +83,7 @@ function playOn(cell) {
 
 function drawCross() {
 	return '<svg with="100mm" height="100mm" viewbox="0 0 100 100">'
-		+  '<g style="stroke:black;stroke-width:4;fill:none">'
+		+  '<g style="stroke:black;stroke-width:4;fill:none;stroke-linecap:round;stroke-linejoin:round">'
 		+  '<path d="M ' + randomInt(70, 85) + ',' + randomInt(70, 85)
 		+  ' L ' + randomInt(15, 30) + ',' + randomInt(15, 30)
 		+  ' ' + randomInt(15, 30) + ',' + randomInt(70, 85)
@@ -100,7 +100,7 @@ function drawCircle() {
 	let xe = randomInt(45, 55);	let ye = randomInt(5, 15);
 	let xf = randomInt(70, 85);	let yf = randomInt(15, 30);
 	return '<svg with="100mm" height="100mm" viewbox="0 0 100 100">'
-		+  '<g style="stroke:black;stroke-width:4;fill:none">'
+		+  '<g style="stroke:black;stroke-width:4;fill:none;stroke-linecap:round">'
 		+  '<path d="M ' + xa + ',' + ya
 		+  ' Q ' + xb + ',' + yb
 		+  ' ' + m(xb, xc) + ',' + m(yb, yc)
@@ -121,8 +121,6 @@ function optimal() {
 		new_board[c] = BOT;
 		rewards[c] = simulation_player(new_board);
 	}
-
-	console.log(rewards);
 
 	var best = undefined;
 	var bestReward = -1;
