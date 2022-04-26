@@ -54,7 +54,7 @@ function localise() {
 		let popupEnd = document.getElementById("popup-end");
 		popupEnd.children[1].children[0].innerText = "Rejouer";
 		CAPTION_WIN = "Gagné !";
-		CAPTION_DRAW = "Égalité ...";
+		CAPTION_DRAW = "Match nul ...";
 		CAPTION_LOOSE = "Perdu !";
 	}
 }
